@@ -1,0 +1,21 @@
+Master Slave .
+
+Master - Read And write
+
+Slave -  Read
+
+The records updated to Master gets replicated to the Slave at run time.
+
+
+Steps for configuration of the Redis replica.
+
+1. Master -> Redis Config , Set the port at which the master should run. "using :port //bind field
+
+2. Create slave -> redis config, set the port on which slave should run "using port"
+   Connect to the master using "replicaOf : <provide master - ip and the port"
+
+
+
+
+
+  

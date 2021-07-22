@@ -29,3 +29,7 @@ Exec
 Either everything is successful or not .
 
 if incase we dont wanted the transaction to execute use discard.
+
+use watch - when we wanted to monitor the value change of the field and ensure that the transacation fails if the value in the field changes.
+
+use unwatch to unlink the watch.

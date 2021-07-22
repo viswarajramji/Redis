@@ -1,0 +1,61 @@
+Master and slave.
+
+1. What is sentinal.
+2. Quoram - minimum number of nodes need to runn the sentinal.
+3. Down after milliseconds.
+
+When master is down then sentinal is process to decide which slave can become a Master
+
+Redis Application
+
+Redis - Service  -> config.
+Redis - Senitanal -> config.
+
+Quoram :
+
+is the condition that minimum number of nodes be avaialbe to run the sentinal Process if not met then the sentinal process doesnt not happens
+
+Down After milliseconds :
+
+The time duration provided before the sential process is started.
+
+
+when the failed master is back then the master is made as slave
+
+
+Sential Configuration:
+
+
+Master Slave .
+
+Master - Read And write
+
+Slave -  Read
+
+The records updated to Master gets replicated to the Slave at run time.
+
+
+Steps for configuration of the Redis replica.
+
+In Master
+
+1. For Redis Master -> Redis Config , Set the port at which the master redis should run. "using :port //bind field
+2. For Sentianal Master -> sentianal Config , Set the port at which the master sential should run. "using :port //bind field
+3. For connecting Sential to master :use "Sentinel monitor name : <ip address of the  master redis server > <Quoram>"
+
+
+
+In Slave
+
+1. For Redis slave  -> Redis Config , Set the port at which the slave redis should run. "using :port //bind field
+2. For Replication -> Redis Config , set the replication of to master redis
+2. For Sentianal Master -> sentianal Config , Set the port at which the master sential should run. "using :port //bind field
+3. For connecting Sential to master :use "Sentinel monitor name : <ip address of the  master redis server > <Quoram>"
+
+
+
+For starting redis :
+redis-server
+
+For starting sentinal:
+redis-sentinal.

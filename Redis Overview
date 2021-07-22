@@ -36,3 +36,8 @@ brew services stop redis.
 Note :
 To List All keys : keys *
 To flush all values : flushAll
+
+
+The History of the commands executed is present in directory : ~/rediscli_history
+
+Any failure in redis happens via the .log file (the configuration is made in the redis.config)
