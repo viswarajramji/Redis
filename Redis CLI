@@ -1,0 +1,9 @@
+Redis - CLI
+
+Redis cli is a command line interface used to work with redis server
+
+check if the redis server is running
+
+redis-cli
+redis ping
+// PONG redis is running

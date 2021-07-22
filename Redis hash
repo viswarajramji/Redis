@@ -1,0 +1,4 @@
+hset <key> <field> <value> - add to the set
+gset <key> <field> - gets the value from the set
+hmset <key> <field> <value> <field> <value> - adds multiple values to the set
+hmget <key> <field> <field> - gets multiple values.

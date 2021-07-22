@@ -1,0 +1,11 @@
+redis piple is used to do mass upsert
+
+example 1000 entries then we have use the upsert --pipe
+
+the process goes like this
+
+create a file with all the insert commands
+
+cat <file-name.csv> | redis-cli --pipe
+
+This will do the mass insert

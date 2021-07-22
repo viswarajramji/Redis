@@ -1,0 +1,20 @@
+Redis operations Operations
+
+
+set <key> <value> - Set the key with the value
+
+get <key> - get the value  for the key
+
+del <key> - deletes the key and the value
+
+mset <key> <value> <key> <value> - Multiple set operations
+
+gset <key> <key> <key> - Multiple get operations
+
+exist <key> - check if the key exist in Map.
+
+expire <key> <duration in sec> - make the key expire within a specific time.
+
+persist <key> - removes the expiry
+
+set <key> <value> [ex|px] duration - set the key and value along with the expiry time line or duration. ex - seconds px -milli seconds

@@ -1,0 +1,22 @@
+Map<key,List<Values>> - concept
+
+1. lpush <key> <values ...>
+
+2. rpush <key> <values ...>
+
+3. display values  - lrange
+
+ 1. lrange <key> <index1> <indexN> - prints all values between these index
+
+  Note: -1 is the end of the list.
+
+4. llen <key> - get the length of the values for the given keys
+
+5. Remove elements from the List
+
+1. lpop - pop the value from the left of the list.
+2. rpop  - pop the value from the right of the list.
+
+6. ltrim. perist values within the specified range
+
+  ltrim color 0 2 -> persist the values within the specified range.

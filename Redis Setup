@@ -1,0 +1,38 @@
+Redis
+
+In Memory data base
+Faster since because its in-memory
+it can be scaled.
+provides high availablity
+
+
+Redis Installation - Mac
+
+1. Install home brew
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+2. Update home Homebrew
+
+brew update
+
+3. Install Redis
+
+brew install redis.
+
+4. un-installation of redis.
+
+brew uninstall redis.
+
+5. starting redis server
+
+brew services start redis.
+
+6. stopping redis server
+
+brew services stop redis.
+
+
+Note :
+To List All keys : keys *
+To flush all values : flushAll
