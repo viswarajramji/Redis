@@ -1,0 +1,31 @@
+Redis transaction provide ACID Property to the Application.
+
+Example when 2 application are parallely updating the system then there is chance that the acid property is failed.
+To handle this case , Redis has provided ways such as redis transactions.
+
+
+The transaction options are as follows:
+
+Multi
+
+Exec
+
+Discard
+
+watch
+
+unwatch
+
+
+Syntax for using transaction are as follow:
+
+
+Multi
+    command1
+    command2
+    command3
+Exec
+
+Either everything is successful or not .
+
+if incase we dont wanted the transaction to execute use discard.

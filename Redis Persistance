@@ -1,0 +1,49 @@
+Redis persistance :
+
+if the process is killed then the values present in the repo is lost.
+
+To handle this case redis have bougth the concept of the RDB and AOF
+
+AOF is more effective in case of consistency and accurracy and reduced data loss.
+
+
+RDB - Redis Database Backup
+
+This is used to create a dump / snap shot when the condition is met.
+
+Example :
+
+
+save <seconds> <no of changes>
+
+save 100 10000
+
+
+Configration for RDB.
+
+1. Redis.Config.
+2. dir => provide the directory of the storage.
+3. dbfilename=> name of the dump or snapshot
+4. save <seconds> <no of changes>
+5. when the application starts the data is restored from the .dump file.
+
+
+AOF- Append only file.
+
+Ths is used to append each command that get executed in redids to the AOF file.
+
+All the redis query that get executed in redis are persisted to aof.
+
+when the application starts the .aof file is executed and the data is resotred to the Redis server.
+
+If both RDB and AOF are on , then the restore of AOF happens due to less data loss.
+
+
+Configration for AOF
+
+1. Redis.Config.
+2. dir => provide the directory of the storage.
+3. appendonly => yes/no
+4. appendfileName=<name of the AOF file>
+6. appendfsync = always /everysec
+7. when the application starts the data is restored from the .aof
