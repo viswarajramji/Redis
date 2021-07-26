@@ -1,0 +1,11 @@
+master and slave.
+
+Once the master is killed
+
+and slave iwll be all alone
+
+so we can create a new master 
+
+and use the "slaveof <master_ip>"
+
+to make the slave to master.
