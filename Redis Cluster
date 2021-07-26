@@ -1,0 +1,22 @@
+Redis cluster is a shared redis setup for high availablity and high relability
+
+Redis Cluster
+
+16000 hashes available in redis cluster
+
+
+M - S
+M - S
+M - S
+
+16000 /  No of master
+
+if master goes down the slave of the master will become the master
+
+creating a cluster
+
+1. create 6 instace of redis server with some config values copied from ipanther repo .
+2. start all 6 instance using redis server <config>
+3. redis-cli --cluster create <ip address> <ip address> <ip address> <ip address> <ip address>  
+
+
