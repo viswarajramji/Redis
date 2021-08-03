@@ -1,0 +1,12 @@
+Redis Set Operations:
+
+
+Set key Value
+get key
+mset key value key value
+mget key key key
+expire key PX|EX Value
+persist key
+del key
+exist key
+incr id
