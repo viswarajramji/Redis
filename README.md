@@ -104,11 +104,15 @@ Set is also a list with difference in unique value persistence.
 
 #### Redis Transaction
 
-* Multi
-* Exec
-* Discard
-* Watch
-* Unwatch
+Redis transaction offer ACID property of a database.
+
+##### Transaction Type
+
+* Multi : starts a transaction
+* Exec : executes a transaction
+* Discard : discard the existing transcation
+* Watch : watch a variable , if the variable encounters a change then the redis transaction will fail.
+* Unwatch : unwatch will remvoe the watch operation of the variable.
 
 
 
