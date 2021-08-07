@@ -75,17 +75,31 @@ List is used to store multiple values for a single key.
 * rpop [key] : remove the first element from the list at the right.
 * ltrim [key] [start] [end] : remove all the values except the range specified in the list.
 
+#### Hashes
 
+A Hashes is a  group of keys & values.
 
+##### Hash Operations
 
-* Hashes
-* Set
+* hset [key] [field] [value]   : stores a field and value to the key.
+* hget [key] [field] [field] : gets the values for the field from the key.
+* hmset [key] [field] [value] ... [field] [value] : stores multiple field and value to the key.
+* hmget [key] [field] [value] ... [field] [value] : get multiple field and value from the key.
 
+#### Set
 
+Set is also a list with difference in unique value persistence.
+ 
+##### Set Operations
 
-
-
-
+* sadd [key] [value] : adds values to the set.
+* smembers [key] : gets values from the set.
+* sismember [key] [value] : check if the member exist in set.
+* scard [key] : get the total number.
+* sdiff [set1] [set2]  : list the diffference between the sets.
+* sdiffstore [setA] [set1] [set2] : store the difference between set1 and set2 inside setA.
+* spop [key] : remove the element from the set.
+* srem [key] [obj] : remove the value from the set.
 
 
 #### Redis Transaction
