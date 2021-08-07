@@ -48,6 +48,8 @@ redis-benchmark -h 127.0.01 -p 6370 -n 1000 -d 10 -t get set
 
 String are basic operation used to write and read from redis.
 
+##### String Operations
+
 * set [key] [value] : sets a value to the key
 * get [key] : get the value for the key
 * del [key] : deletes the key.
@@ -58,10 +60,24 @@ String are basic operation used to write and read from redis.
 * exist [key] : check if the given key exist or not 1 -] yes 0 -] No
 * incr [key] : increments value associated with the key by 1
 
+#### List
+
+List is used to store multiple values for a single key.
+
+##### List Operations
+
+* lpush [key] [value] ... [value] : sets values for the key from the left of the list.
+* rpush [key] [value] ... [value] : sets values for the key from the right of the list.
+* lrange [key] [start] [end]  : get values from the key by the start and end index. 
+(Note : -1 is used to indicate the end of the list)
+* llen [key]  : get the length of the list.
+* lpop [key] : remove the first elemet from the list at the left.
+* rpop [key] : remove the first element from the list at the right.
+* ltrim [key] [start] [end] : remove all the values except the range specified in the list.
 
 
 
-* List
+
 * Hashes
 * Set
 
