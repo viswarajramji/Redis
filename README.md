@@ -115,5 +115,45 @@ Redis transaction offer ACID property of a database.
 * Unwatch : unwatch will remvoe the watch operation of the variable.
 
 
+#### Redis Mass upsert 
+
+create a file with all the set operation ex : data.txt
+
+```sh
+cat <file-name.txt> | redis-cli --pipe
+```
+#### Redis Persistance
+
+Redis data are store in-memory , meaning if the redis process is killed then the data is lost.
+
+Redis offers 2 ways of data persistance. 
+
+* RBD - Redis Data Backup.
+* AOF - Append only file.
+
+##### RDB
+
+RDB creates a data dump based on the condition and when the redis server is restarted the data dump is reloaded into the redis memory , therefore  offering data persistance.
+
+```sh
+1.  Open ~/.redis_config
+2.  provide the details on the directory / dump name 
+3.  Use : save <seconds> <no of changes>
+```
+Based on the details provided above the dump file is created.
+
+##### AOF
+
+AOF creates a file that has all the commands executed on the redis server, when restarted redis re-executes all the command,  therefore offering data persistance.
+
+```sh
+1.  Open ~/.redis_config
+2.  provide the details on the directory
+3.  enable:  appendonly -   yes
+4.  provide the aof file name : appendfileName.aof
+5.  provide the frequency of the persistance : appendfsync - always / second
+```
+
+
 
 
