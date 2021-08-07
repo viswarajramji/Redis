@@ -153,7 +153,47 @@ AOF creates a file that has all the commands executed on the redis server, when 
 4.  provide the aof file name : appendfileName.aof
 5.  provide the frequency of the persistance : appendfsync - always / second
 ```
+#### Redis Replication and High availability.
 
+
+##### Redis replication.
+
+Redis Replication is a master slave redis server configuration , that allows Read/write to master and only read from slave.
+
+
+```sh
+1.  Open ~/.redis_config of the slave redis server
+2.  provide the master ipaddress:port in the replicaof field.
+```
+Refer to image for info.
+
+##### Redis sentinal.
+
+In a master - slave config , if the master goes down then the entire application is halted. Redis Sentinal automatically handle the master down time by auto- enabling a slave as master.
+
+
+#### Redis cluster
+
+Is a group of redis-server , seggrated as master and slave (ie) each master in the cluster will have a slave. 
+
+The total number of hashes allowed is 16K and it is evenly distributed across master.
+
+if the master goes down in the cluster then the slave connected to the master will become the next master. 
+
+##### creating a cluster
+
+```sh
+1. create 6 instace of redis server with some config values copied from ipanther repo .
+2. start all 6 instance using redis server <config>
+3. redis-cli --cluster create <ip address> <ip address> <ip address> <ip address> <ip address>  
+```
+
+
+#### Points to remember:
+
+* Quoram : is the min number of nodes to be avaiable before making a slave to master used in redis sentinal. 
+
+* slaveof : used in real time to point a slave to a different master.
 
 
 
